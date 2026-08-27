@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>xyz_px_dialog</class>
+ <widget class="QDialog" name="xyz_px_dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>279</width>
+    <height>153</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>XYZ Size</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(25, 35, 45);
+font: 9pt &quot;微软雅黑&quot;;
+color: rgb(255, 255, 255);</string>
+  </property>
+  <layout class="QHBoxLayout" name="xyz_px_dialog_hbox">
+   <item>
+    <layout class="QVBoxLayout" name="xyz_vbox">
+     <item>
+      <widget class="QGroupBox" name="xyz_groupbox">
+       <property name="styleSheet">
+        <string notr="true">font: 9pt &quot;微软雅黑&quot;;
+color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="title">
+        <string/>
+       </property>
+       <layout class="QHBoxLayout" name="xyz_groupbox_hbox">
+        <item>
+         <layout class="QVBoxLayout" name="groupbox_vbox">
+          <item>
+           <layout class="QFormLayout" name="x_form">
+            <item row="0" column="0">
+             <widget class="QLabel" name="x_px_label">
+              <property name="mouseTracking">
+               <bool>false</bool>
+              </property>
+              <property name="layoutDirection">
+               <enum>Qt::LeftToRight</enum>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: rgb(255, 255, 255);
+font: 9pt &quot;微软雅黑&quot;;</string>
+              </property>
+              <property name="frameShape">
+               <enum>QFrame::StyledPanel</enum>
+              </property>
+              <property name="text">
+               <string> X:</string>
+              </property>
+              <property name="textFormat">
+               <enum>Qt::AutoText</enum>
+              </property>
+              <property name="scaledContents">
+               <bool>false</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QDoubleSpinBox" name="x_px_spinbox">
+              <property name="styleSheet">
+               <string notr="true">background-color: rgb(25, 35, 45);</string>
+              </property>
+              <property name="decimals">
+               <number>4</number>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QFormLayout" name="y_form">
+            <item row="0" column="0">
+             <widget class="QLabel" name="y_px_label">
+              <property name="styleSheet">
+               <string notr="true">color: rgb(255, 255, 255);
+font: 9pt &quot;微软雅黑&quot;;</string>
+              </property>
+              <property name="frameShape">
+               <enum>QFrame::StyledPanel</enum>
+              </property>
+              <property name="text">
+               <string> Y:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QDoubleSpinBox" name="y_px_spinbox">
+              <property name="styleSheet">
+               <string notr="true">background-color: rgb(25, 35, 45);</string>
+              </property>
+              <property name="decimals">
+               <number>4</number>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QFormLayout" name="z_form">
+            <item row="0" column="0">
+             <widget class="QLabel" name="z_px_label">
+              <property name="styleSheet">
+               <string notr="true">color: rgb(255, 255, 255);
+font: 9pt &quot;微软雅黑&quot;;</string>
+              </property>
+              <property name="frameShape">
+               <enum>QFrame::StyledPanel</enum>
+              </property>
+              <property name="text">
+               <string> Z:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QDoubleSpinBox" name="z_px_spinbox">
+              <property name="styleSheet">
+               <string notr="true">background-color: rgb(25, 35, 45);</string>
+              </property>
+              <property name="decimals">
+               <number>4</number>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="sure_button">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(25, 35, 45);</string>
+       </property>
+       <property name="text">
+        <string>OK</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

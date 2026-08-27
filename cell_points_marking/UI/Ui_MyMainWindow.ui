@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MyMainWindow</class>
+ <widget class="QMainWindow" name="MyMainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1200</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>CellPointsMarking</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">font: 9pt &quot;微软雅黑&quot;;
+color: rgb(25, 35, 45);</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true">color: rgb(25, 35, 45);border:rgb(70, 80, 100);
+font: 9pt &quot;Arial&quot;;</string>
+   </property>
+   <layout class="QHBoxLayout" name="central_hbox">
+    <item>
+     <widget class="QFrame" name="frame">
+      <property name="cursor">
+       <cursorShape>ArrowCursor</cursorShape>
+      </property>
+      <property name="layoutDirection">
+       <enum>Qt::LeftToRight</enum>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-color:rgb(25, 35, 45);
+color: rgb(25, 35, 45);
+border-width: 1px;
+border-style: solid;
+font: 9pt &quot;Arial&quot;;</string>
+      </property>
+      <layout class="QHBoxLayout" name="frame_hbox">
+       <item>
+        <layout class="QVBoxLayout" name="frame_vl"/>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="myStatus">
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);
+font: 9pt &quot;Arial&quot;;</string>
+   </property>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1200</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <widget class="QMenu" name="file">
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="open_file_act"/>
+    <addaction name="separator"/>
+    <addaction name="save_pos_act"/>
+   </widget>
+   <widget class="QMenu" name="edit">
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(25, 35, 45);</string>
+    </property>
+    <property name="title">
+     <string/>
+    </property>
+    <addaction name="images_list_act"/>
+    <addaction name="funs_widget_act"/>
+   </widget>
+   <widget class="QMenu" name="hide_bar">
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(25, 35, 45);</string>
+    </property>
+    <property name="title">
+     <string/>
+    </property>
+    <addaction name="actor_delete_act"/>
+    <addaction name="change_function_act"/>
+    <addaction name="sphere_quick_key_act"/>
+    <addaction name="outline_show_hide_act"/>
+    <addaction name="data_volume_show_hide_act"/>
+    <addaction name="box_to_up_act"/>
+    <addaction name="box_to_down_act"/>
+    <addaction name="gray_auto_change_act"/>
+    <addaction name="camera_focal_act"/>
+    <addaction name="sure_gray_auto_act"/>
+    <addaction name="gray_left_act"/>
+    <addaction name="gray_right_act"/>
+    <addaction name="item_up_act"/>
+    <addaction name="item_down_act"/>
+    <addaction name="box_x_to_down_act"/>
+    <addaction name="box_x_to_add_act"/>
+    <addaction name="box_y_to_add_act"/>
+    <addaction name="box_y_to_down_act"/>
+    <addaction name="box_show_hide_act"/>
+    <addaction name="box_cut_label_act"/>
+    <addaction name="recovery_xy_act"/>
+    <addaction name="recovery_z_act"/>
+   </widget>
+   <addaction name="file"/>
+   <addaction name="edit"/>
+   <addaction name="hide_bar"/>
+  </widget>
+  <action name="open_file_act">
+   <property name="text">
+    <string>Open File</string>
+   </property>
+   <property name="statusTip">
+    <string>&gt;&gt;&gt;打开文件</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+Q</string>
+   </property>
+  </action>
+  <action name="save_pos_act">
+   <property name="text">
+    <string>Save Position</string>
+   </property>
+   <property name="statusTip">
+    <string>&gt;&gt;&gt;保存swc文件</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="images_list_act">
+   <property name="text">
+    <string>images_list_act</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+1</string>
+   </property>
+  </action>
+  <action name="funs_widget_act">
+   <property name="text">
+    <string>funs_widget_act</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+2</string>
+   </property>
+  </action>
+  <action name="actor_delete_act">
+   <property name="text">
+    <string>actor_delete_act</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+X</string>
+   </property>
+  </action>
+  <action name="change_function_act">
+   <property name="text">
+    <string>change_function_act</string>
+   </property>
+   <property name="shortcut">
+    <string>M</string>
+   </property>
+  </action>
+  <action name="sphere_quick_key_act">
+   <property name="text">
+    <string>sphere_quick_key_act</string>
+   </property>
+   <property name="shortcut">
+    <string>Q</string>
+   </property>
+  </action>
+  <action name="outline_show_hide_act">
+   <property name="text">
+    <string>outline_show_hide_act</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+  </action>
+  <action name="data_volume_show_hide_act">
+   <property name="text">
+    <string>data_volume_show_hide_act</string>
+   </property>
+   <property name="shortcut">
+    <string>Shift+Q</string>
+   </property>
+  </action>
+  <action name="box_to_up_act">
+   <property name="text">
+    <string>box_to_up_act</string>
+   </property>
+   <property name="shortcut">
+    <string>D</string>
+   </property>
+  </action>
+  <action name="box_to_down_act">
+   <property name="text">
+    <string>box_to_down_act</string>
+   </property>
+   <property name="shortcut">
+    <string>A</string>
+   </property>
+  </action>
+  <action name="gray_auto_change_act">
+   <property name="text">
+    <string>gray_auto_change_act</string>
+   </property>
+   <property name="shortcut">
+    <string>G</string>
+   </property>
+  </action>
+  <action name="camera_focal_act">
+   <property name="text">
+    <string>camera_focal_act</string>
+   </property>
+   <property name="shortcut">
+    <string>F</string>
+   </property>
+  </action>
+  <action name="sure_gray_auto_act">
+   <property name="text">
+    <string>sure_gray_auto_act</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+G</string>
+   </property>
+  </action>
+  <action name="gray_left_act">
+   <property name="text">
+    <string>gray_left_act</string>
+   </property>
+   <property name="shortcut">
+    <string>1</string>
+   </property>
+  </action>
+  <action name="gray_right_act">
+   <property name="text">
+    <string>gray_right_act</string>
+   </property>
+   <property name="shortcut">
+    <string>2</string>
+   </property>
+  </action>
+  <action name="item_up_act">
+   <property name="text">
+    <string>item_up_act</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+W</string>
+   </property>
+  </action>
+  <action name="item_down_act">
+   <property name="text">
+    <string>item_down_act</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+S</string>
+   </property>
+  </action>
+  <action name="box_x_to_down_act">
+   <property name="text">
+    <string>box_x_to_down_act</string>
+   </property>
+   <property name="shortcut">
+    <string>J</string>
+   </property>
+  </action>
+  <action name="box_x_to_add_act">
+   <property name="text">
+    <string>box_x_to_add_act</string>
+   </property>
+   <property name="shortcut">
+    <string>L</string>
+   </property>
+  </action>
+  <action name="box_y_to_add_act">
+   <property name="text">
+    <string>box_y_to_add_act</string>
+   </property>
+   <property name="shortcut">
+    <string>I</string>
+   </property>
+  </action>
+  <action name="box_y_to_down_act">
+   <property name="text">
+    <string>box_y_to_down_act</string>
+   </property>
+   <property name="shortcut">
+    <string>K</string>
+   </property>
+  </action>
+  <action name="box_show_hide_act">
+   <property name="text">
+    <string>box_show_hide_act</string>
+   </property>
+   <property name="shortcut">
+    <string>B</string>
+   </property>
+  </action>
+  <action name="box_cut_label_act">
+   <property name="text">
+    <string>box_cut_label_act</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+B</string>
+   </property>
+  </action>
+  <action name="recovery_xy_act">
+   <property name="text">
+    <string>recovery_xy_act</string>
+   </property>
+   <property name="shortcut">
+    <string>R</string>
+   </property>
+  </action>
+  <action name="recovery_z_act">
+   <property name="text">
+    <string>recovery_z_act</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+R</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

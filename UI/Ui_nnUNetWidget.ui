@@ -1,0 +1,1850 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>nnUNetWidget</class>
+ <widget class="QWidget" name="nnUNetWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1240</width>
+    <height>832</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string>nnUNetWidget</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(25, 35, 45);
+font: 9pt &quot;微软雅黑&quot;;</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_2">
+   <property name="spacing">
+    <number>6</number>
+   </property>
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <property name="spacing">
+      <number>1</number>
+     </property>
+     <property name="bottomMargin">
+      <number>0</number>
+     </property>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_29">
+       <property name="spacing">
+        <number>6</number>
+       </property>
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QWidget" name="tool_widget" native="true">
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(70, 80, 100);</string>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_12">
+          <property name="spacing">
+           <number>6</number>
+          </property>
+          <property name="leftMargin">
+           <number>3</number>
+          </property>
+          <property name="topMargin">
+           <number>3</number>
+          </property>
+          <property name="rightMargin">
+           <number>3</number>
+          </property>
+          <property name="bottomMargin">
+           <number>2</number>
+          </property>
+          <item>
+           <widget class="QPushButton" name="ModelTrainButton">
+            <property name="toolTip">
+             <string>Model Training</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="ModelPredictButton">
+            <property name="toolTip">
+             <string>Model Prediction</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_7">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_6">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font: 75 11pt &quot;微软雅黑&quot;;</string>
+            </property>
+            <property name="text">
+             <string>   nnUNet Processing Module   </string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="QStackedWidget" name="stackedWidget">
+       <property name="currentIndex">
+        <number>1</number>
+       </property>
+       <widget class="QWidget" name="TrainPage">
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_5">
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
+         <item>
+          <layout class="QHBoxLayout" name="Train_horizontalLayout">
+           <property name="spacing">
+            <number>4</number>
+           </property>
+           <item>
+            <widget class="QFrame" name="TrainWidget">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+               <horstretch>1</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>430</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QWidget#TrainWidget {
+	border: 1px solid rgb(70,80,100);
+}</string>
+             </property>
+             <property name="frameShape">
+              <enum>QFrame::StyledPanel</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Raised</enum>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_5">
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <item>
+               <layout class="QVBoxLayout" name="Train_verticalLayout">
+                <property name="spacing">
+                 <number>0</number>
+                </property>
+                <item>
+                 <widget class="QWidget" name="train_func_widget" native="true">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                    <horstretch>0</horstretch>
+                    <verstretch>5</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <layout class="QVBoxLayout" name="verticalLayout_35">
+                   <property name="leftMargin">
+                    <number>3</number>
+                   </property>
+                   <property name="topMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="rightMargin">
+                    <number>3</number>
+                   </property>
+                   <property name="bottomMargin">
+                    <number>0</number>
+                   </property>
+                   <item>
+                    <widget class="QGroupBox" name="train_func_groupBox">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>0</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">QGroupBox#train_func_groupBox
+{
+	border: 1px solid rgb(70,80,100);
+	margin-top: 3.0ex;
+}
+QGroupBox#train_func_groupBox::title
+{
+	subcontrol-origin:margin;
+	left: 10px;
+}</string>
+                     </property>
+                     <property name="title">
+                      <string>Training Parameter Setting</string>
+                     </property>
+                     <layout class="QVBoxLayout" name="verticalLayout_36">
+                      <property name="leftMargin">
+                       <number>3</number>
+                      </property>
+                      <property name="topMargin">
+                       <number>9</number>
+                      </property>
+                      <property name="rightMargin">
+                       <number>3</number>
+                      </property>
+                      <property name="bottomMargin">
+                       <number>3</number>
+                      </property>
+                      <item>
+                       <layout class="QVBoxLayout" name="verticalLayout_6">
+                        <property name="leftMargin">
+                         <number>3</number>
+                        </property>
+                        <property name="topMargin">
+                         <number>3</number>
+                        </property>
+                        <property name="rightMargin">
+                         <number>3</number>
+                        </property>
+                        <property name="bottomMargin">
+                         <number>3</number>
+                        </property>
+                        <item>
+                         <layout class="QGridLayout" name="gridLayout_7" rowstretch="0,0,0" rowminimumheight="0,0,0">
+                          <property name="leftMargin">
+                           <number>3</number>
+                          </property>
+                          <property name="topMargin">
+                           <number>3</number>
+                          </property>
+                          <property name="rightMargin">
+                           <number>3</number>
+                          </property>
+                          <property name="bottomMargin">
+                           <number>3</number>
+                          </property>
+                          <property name="verticalSpacing">
+                           <number>12</number>
+                          </property>
+                          <item row="0" column="0">
+                           <widget class="QLabel" name="label_3">
+                            <property name="text">
+                             <string>Images path:</string>
+                            </property>
+                           </widget>
+                          </item>
+                          <item row="0" column="2">
+                           <widget class="QPushButton" name="train_images_Button">
+                            <property name="text">
+                             <string>Open</string>
+                            </property>
+                           </widget>
+                          </item>
+                          <item row="2" column="0">
+                           <widget class="QLabel" name="label_16">
+                            <property name="text">
+                             <string>Save path:</string>
+                            </property>
+                           </widget>
+                          </item>
+                          <item row="1" column="0">
+                           <widget class="QLabel" name="label">
+                            <property name="text">
+                             <string>SWC path:</string>
+                            </property>
+                           </widget>
+                          </item>
+                          <item row="1" column="1">
+                           <widget class="QLineEdit" name="train_SWC_lineEdit"/>
+                          </item>
+                          <item row="2" column="1">
+                           <widget class="QLineEdit" name="train_save_lineEdit">
+                            <property name="text">
+                             <string/>
+                            </property>
+                            <property name="readOnly">
+                             <bool>true</bool>
+                            </property>
+                           </widget>
+                          </item>
+                          <item row="2" column="2">
+                           <widget class="QPushButton" name="train_save_Button">
+                            <property name="text">
+                             <string>Open</string>
+                            </property>
+                           </widget>
+                          </item>
+                          <item row="1" column="2">
+                           <widget class="QPushButton" name="train_SWC_Button">
+                            <property name="text">
+                             <string>Open</string>
+                            </property>
+                           </widget>
+                          </item>
+                          <item row="0" column="1">
+                           <widget class="QLineEdit" name="train_images_lineEdit"/>
+                          </item>
+                         </layout>
+                        </item>
+                        <item>
+                         <widget class="QCheckBox" name="continue_training_checkBox">
+                          <property name="text">
+                           <string>Continue Training</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QWidget" name="no_continue_training_widget" native="true">
+                          <property name="minimumSize">
+                           <size>
+                            <width>0</width>
+                            <height>0</height>
+                           </size>
+                          </property>
+                          <layout class="QVBoxLayout" name="verticalLayout_3">
+                           <property name="spacing">
+                            <number>0</number>
+                           </property>
+                           <property name="leftMargin">
+                            <number>0</number>
+                           </property>
+                           <property name="topMargin">
+                            <number>0</number>
+                           </property>
+                           <property name="rightMargin">
+                            <number>0</number>
+                           </property>
+                           <property name="bottomMargin">
+                            <number>0</number>
+                           </property>
+                           <item>
+                            <layout class="QGridLayout" name="gridLayout">
+                             <property name="leftMargin">
+                              <number>3</number>
+                             </property>
+                             <property name="topMargin">
+                              <number>3</number>
+                             </property>
+                             <property name="rightMargin">
+                              <number>3</number>
+                             </property>
+                             <property name="bottomMargin">
+                              <number>3</number>
+                             </property>
+                             <property name="horizontalSpacing">
+                              <number>6</number>
+                             </property>
+                             <property name="verticalSpacing">
+                              <number>12</number>
+                             </property>
+                             <item row="0" column="1">
+                              <widget class="QComboBox" name="images_type_combo">
+                               <property name="sizePolicy">
+                                <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                                 <horstretch>0</horstretch>
+                                 <verstretch>0</verstretch>
+                                </sizepolicy>
+                               </property>
+                               <property name="minimumSize">
+                                <size>
+                                 <width>0</width>
+                                 <height>0</height>
+                                </size>
+                               </property>
+                               <property name="layoutDirection">
+                                <enum>Qt::LeftToRight</enum>
+                               </property>
+                               <property name="editable">
+                                <bool>false</bool>
+                               </property>
+                               <property name="minimumContentsLength">
+                                <number>0</number>
+                               </property>
+                               <property name="duplicatesEnabled">
+                                <bool>false</bool>
+                               </property>
+                               <item>
+                                <property name="text">
+                                 <string>cell</string>
+                                </property>
+                               </item>
+                               <item>
+                                <property name="text">
+                                 <string>neuron</string>
+                                </property>
+                               </item>
+                               <item>
+                                <property name="text">
+                                 <string>vessel</string>
+                                </property>
+                               </item>
+                              </widget>
+                             </item>
+                             <item row="1" column="1">
+                              <widget class="QComboBox" name="train_epochs_combo">
+                               <property name="sizePolicy">
+                                <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                                 <horstretch>0</horstretch>
+                                 <verstretch>0</verstretch>
+                                </sizepolicy>
+                               </property>
+                               <property name="currentText">
+                                <string>1000</string>
+                               </property>
+                               <property name="currentIndex">
+                                <number>9</number>
+                               </property>
+                               <item>
+                                <property name="text">
+                                 <string>1</string>
+                                </property>
+                               </item>
+                               <item>
+                                <property name="text">
+                                 <string>5</string>
+                                </property>
+                               </item>
+                               <item>
+                                <property name="text">
+                                 <string>10</string>
+                                </property>
+                               </item>
+                               <item>
+                                <property name="text">
+                                 <string>20</string>
+                                </property>
+                               </item>
+                               <item>
+                                <property name="text">
+                                 <string>50</string>
+                                </property>
+                               </item>
+                               <item>
+                                <property name="text">
+                                 <string>100</string>
+                                </property>
+                               </item>
+                               <item>
+                                <property name="text">
+                                 <string>250</string>
+                                </property>
+                               </item>
+                               <item>
+                                <property name="text">
+                                 <string>500</string>
+                                </property>
+                               </item>
+                               <item>
+                                <property name="text">
+                                 <string>750</string>
+                                </property>
+                               </item>
+                               <item>
+                                <property name="text">
+                                 <string>1000</string>
+                                </property>
+                               </item>
+                               <item>
+                                <property name="text">
+                                 <string>2000</string>
+                                </property>
+                               </item>
+                               <item>
+                                <property name="text">
+                                 <string>4000</string>
+                                </property>
+                               </item>
+                               <item>
+                                <property name="text">
+                                 <string>8000</string>
+                                </property>
+                               </item>
+                              </widget>
+                             </item>
+                             <item row="0" column="0">
+                              <widget class="QLabel" name="label_2">
+                               <property name="text">
+                                <string>Images Type:</string>
+                               </property>
+                              </widget>
+                             </item>
+                             <item row="1" column="0">
+                              <widget class="QLabel" name="label_4">
+                               <property name="text">
+                                <string>Train Epochs:</string>
+                               </property>
+                              </widget>
+                             </item>
+                            </layout>
+                           </item>
+                          </layout>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QWidget" name="continue_training_widget" native="true">
+                          <property name="minimumSize">
+                           <size>
+                            <width>0</width>
+                            <height>0</height>
+                           </size>
+                          </property>
+                          <layout class="QHBoxLayout" name="horizontalLayout_2">
+                           <property name="spacing">
+                            <number>10</number>
+                           </property>
+                           <property name="leftMargin">
+                            <number>3</number>
+                           </property>
+                           <property name="topMargin">
+                            <number>3</number>
+                           </property>
+                           <property name="rightMargin">
+                            <number>3</number>
+                           </property>
+                           <property name="bottomMargin">
+                            <number>3</number>
+                           </property>
+                           <item>
+                            <widget class="QLabel" name="label_8">
+                             <property name="text">
+                              <string>checkpoints path:</string>
+                             </property>
+                            </widget>
+                           </item>
+                           <item>
+                            <widget class="QLineEdit" name="continue_training_lineEdit"/>
+                           </item>
+                           <item>
+                            <widget class="QPushButton" name="continue_training_Button">
+                             <property name="text">
+                              <string>Open</string>
+                             </property>
+                            </widget>
+                           </item>
+                          </layout>
+                         </widget>
+                        </item>
+                        <item>
+                         <spacer name="verticalSpacer_3">
+                          <property name="orientation">
+                           <enum>Qt::Vertical</enum>
+                          </property>
+                          <property name="sizeHint" stdset="0">
+                           <size>
+                            <width>20</width>
+                            <height>40</height>
+                           </size>
+                          </property>
+                         </spacer>
+                        </item>
+                        <item>
+                         <layout class="QHBoxLayout" name="horizontalLayout_11">
+                          <property name="leftMargin">
+                           <number>3</number>
+                          </property>
+                          <property name="topMargin">
+                           <number>3</number>
+                          </property>
+                          <property name="rightMargin">
+                           <number>3</number>
+                          </property>
+                          <property name="bottomMargin">
+                           <number>3</number>
+                          </property>
+                          <item>
+                           <spacer name="horizontalSpacer_5">
+                            <property name="orientation">
+                             <enum>Qt::Horizontal</enum>
+                            </property>
+                            <property name="sizeHint" stdset="0">
+                             <size>
+                              <width>40</width>
+                              <height>20</height>
+                             </size>
+                            </property>
+                           </spacer>
+                          </item>
+                          <item>
+                           <widget class="QPushButton" name="train_start_Button">
+                            <property name="text">
+                             <string>Start Training</string>
+                            </property>
+                           </widget>
+                          </item>
+                          <item>
+                           <widget class="QPushButton" name="train_end_Button">
+                            <property name="text">
+                             <string>End Training</string>
+                            </property>
+                           </widget>
+                          </item>
+                          <item>
+                           <widget class="QPushButton" name="train_preview_Button">
+                            <property name="text">
+                             <string>Training Visualization</string>
+                            </property>
+                           </widget>
+                          </item>
+                         </layout>
+                        </item>
+                       </layout>
+                      </item>
+                     </layout>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QWidget" name="train_info_widget" native="true">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                    <horstretch>0</horstretch>
+                    <verstretch>11</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <layout class="QVBoxLayout" name="verticalLayout_33">
+                   <property name="leftMargin">
+                    <number>3</number>
+                   </property>
+                   <property name="topMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="rightMargin">
+                    <number>3</number>
+                   </property>
+                   <property name="bottomMargin">
+                    <number>3</number>
+                   </property>
+                   <item>
+                    <widget class="QGroupBox" name="train_info_groupBox">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>0</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">QGroupBox#train_info_groupBox
+{
+	border: 1px solid rgb(70,80,100);
+	margin-top: 3.0ex;
+}
+QGroupBox#train_info_groupBox::title
+{
+	subcontrol-origin:margin;
+	left: 10px;
+}</string>
+                     </property>
+                     <property name="title">
+                      <string>Hint Text </string>
+                     </property>
+                     <layout class="QVBoxLayout" name="verticalLayout_34">
+                      <property name="leftMargin">
+                       <number>3</number>
+                      </property>
+                      <property name="topMargin">
+                       <number>9</number>
+                      </property>
+                      <property name="rightMargin">
+                       <number>3</number>
+                      </property>
+                      <property name="bottomMargin">
+                       <number>3</number>
+                      </property>
+                      <item>
+                       <layout class="QVBoxLayout" name="verticalLayout_32">
+                        <item>
+                         <widget class="QTextBrowser" name="train_info_textBrowser">
+                          <property name="sizePolicy">
+                           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                           </sizepolicy>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">QTextBrowser#train_info_textBrowser {
+	border: 1px solid rgb(70,80,100)
+}</string>
+                          </property>
+                          <property name="html">
+                           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'微软雅黑'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Training Parameters&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#ffcf0f;&quot;&gt;Images path&lt;/span&gt;: Click &amp;quot;Open&amp;quot; to select the path of the image folder in 3D TIF format.&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#ffcf0f;&quot;&gt;SWC path&lt;/span&gt;: Click &amp;quot;Open&amp;quot; to select the path of the swc point cloud folder.&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#ffcf0f;&quot;&gt;Save path&lt;/span&gt;: Click &amp;quot;Open&amp;quot; to select the path of the save folder. After starting the training, click &amp;quot;Look&amp;quot; to view the path. &lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#ffcf0f;&quot;&gt;Images Type&lt;/span&gt;: Select the type of image to process.&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#ffcf0f;&quot;&gt;Train Epochs&lt;/span&gt;: The optimal choice for training rounds is generally between 250 and 1000 rounds. &lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#ffcf0f;&quot;&gt;Continue Training&lt;/span&gt;: Select the &amp;quot;checkpoint_final.pth&amp;quot; model path to continue training. There is no need to set &amp;quot;Images Type&amp;quot; and &amp;quot;Train Epochs&amp;quot; for continuing training.&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#ff0000;&quot;&gt;The selected model path &amp;quot;checkpoint_final.pth&amp;quot; must be located in the &amp;quot;Save path&amp;quot; folder, typically in the path &amp;quot;Save path/nnUNetFrame/nnUNet_results/.../fold_X/checkpoint_final.pth&amp;quot;. Otherwise, the training will be restarted.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Click &amp;quot;Start Training&amp;quot; to begin training the model.&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Click &amp;quot;End Training&amp;quot; to end the training of the model.&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Click &amp;quot;Training Visualization&amp;quot; to view the training loss curve.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                          </property>
+                         </widget>
+                        </item>
+                       </layout>
+                      </item>
+                     </layout>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QFrame" name="TrainFrame">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+               <horstretch>36</horstretch>
+               <verstretch>1</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QWidget#TrainFrame {
+	border: 1px solid rgb(70,80,100);
+}</string>
+             </property>
+             <property name="frameShape">
+              <enum>QFrame::StyledPanel</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Raised</enum>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_38">
+              <property name="leftMargin">
+               <number>3</number>
+              </property>
+              <property name="topMargin">
+               <number>3</number>
+              </property>
+              <property name="rightMargin">
+               <number>3</number>
+              </property>
+              <property name="bottomMargin">
+               <number>3</number>
+              </property>
+              <item>
+               <widget class="QGroupBox" name="train_progress_groupBox">
+                <property name="styleSheet">
+                 <string notr="true">QGroupBox#train_progress_groupBox
+{
+	border: 1px solid rgb(70,80,100);
+	margin-top: 3.0ex;
+}
+QGroupBox#train_progress_groupBox::title
+{
+	subcontrol-origin:margin;
+	left: 10px;
+}</string>
+                </property>
+                <property name="title">
+                 <string>Progress Bar</string>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_23">
+                 <property name="leftMargin">
+                  <number>3</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>3</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>3</number>
+                 </property>
+                 <item>
+                  <layout class="QVBoxLayout" name="verticalLayout_37">
+                   <item>
+                    <widget class="QListWidget" name="train_result_listWidget">
+                     <property name="styleSheet">
+                      <string notr="true"/>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="PredictPage">
+        <layout class="QHBoxLayout" name="horizontalLayout_3">
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
+         <item>
+          <layout class="QHBoxLayout" name="Predict_horizontalLayout">
+           <property name="spacing">
+            <number>4</number>
+           </property>
+           <property name="leftMargin">
+            <number>0</number>
+           </property>
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <item>
+            <widget class="QFrame" name="PredictWidget">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+               <horstretch>1</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>430</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QWidget#PredictWidget {
+	border: 1px solid rgb(70,80,100);
+}</string>
+             </property>
+             <property name="frameShape">
+              <enum>QFrame::StyledPanel</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Raised</enum>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_12">
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <item>
+               <layout class="QVBoxLayout" name="Predict_verticalLayout">
+                <property name="spacing">
+                 <number>0</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>0</number>
+                </property>
+                <item>
+                 <widget class="QWidget" name="predict_func_widget" native="true">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                    <horstretch>0</horstretch>
+                    <verstretch>5</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <layout class="QVBoxLayout" name="verticalLayout_17">
+                   <property name="leftMargin">
+                    <number>3</number>
+                   </property>
+                   <property name="topMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="rightMargin">
+                    <number>3</number>
+                   </property>
+                   <property name="bottomMargin">
+                    <number>0</number>
+                   </property>
+                   <item>
+                    <widget class="QGroupBox" name="predict_func_groupBox">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                       <horstretch>1</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>0</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">QGroupBox#predict_func_groupBox
+{
+	border: 1px solid rgb(70,80,100);
+	margin-top: 3.0ex;
+}
+QGroupBox#predict_func_groupBox::title
+{
+	subcontrol-origin:margin;
+	left: 10px;
+}</string>
+                     </property>
+                     <property name="title">
+                      <string>Prediction Parameter Setting</string>
+                     </property>
+                     <layout class="QVBoxLayout" name="verticalLayout_22">
+                      <property name="leftMargin">
+                       <number>3</number>
+                      </property>
+                      <property name="topMargin">
+                       <number>9</number>
+                      </property>
+                      <property name="rightMargin">
+                       <number>3</number>
+                      </property>
+                      <property name="bottomMargin">
+                       <number>3</number>
+                      </property>
+                      <item>
+                       <layout class="QVBoxLayout" name="verticalLayout_19">
+                        <property name="leftMargin">
+                         <number>3</number>
+                        </property>
+                        <property name="topMargin">
+                         <number>3</number>
+                        </property>
+                        <property name="rightMargin">
+                         <number>3</number>
+                        </property>
+                        <property name="bottomMargin">
+                         <number>3</number>
+                        </property>
+                        <item>
+                         <layout class="QHBoxLayout" name="horizontalLayout_7">
+                          <property name="leftMargin">
+                           <number>3</number>
+                          </property>
+                          <property name="topMargin">
+                           <number>3</number>
+                          </property>
+                          <property name="rightMargin">
+                           <number>3</number>
+                          </property>
+                          <property name="bottomMargin">
+                           <number>3</number>
+                          </property>
+                          <item>
+                           <widget class="QRadioButton" name="predict_radioButton">
+                            <property name="text">
+                             <string>Model Prediction</string>
+                            </property>
+                           </widget>
+                          </item>
+                          <item>
+                           <widget class="QRadioButton" name="splice_radioButton">
+                            <property name="text">
+                             <string>Result Splicing</string>
+                            </property>
+                           </widget>
+                          </item>
+                          <item>
+                           <spacer name="horizontalSpacer_12">
+                            <property name="orientation">
+                             <enum>Qt::Horizontal</enum>
+                            </property>
+                            <property name="sizeHint" stdset="0">
+                             <size>
+                              <width>40</width>
+                              <height>20</height>
+                             </size>
+                            </property>
+                           </spacer>
+                          </item>
+                         </layout>
+                        </item>
+                        <item>
+                         <widget class="QStackedWidget" name="predict_stackedWidget">
+                          <property name="currentIndex">
+                           <number>0</number>
+                          </property>
+                          <widget class="QWidget" name="predict_page">
+                           <property name="minimumSize">
+                            <size>
+                             <width>0</width>
+                             <height>0</height>
+                            </size>
+                           </property>
+                           <layout class="QVBoxLayout" name="verticalLayout_7">
+                            <property name="leftMargin">
+                             <number>0</number>
+                            </property>
+                            <property name="topMargin">
+                             <number>0</number>
+                            </property>
+                            <property name="rightMargin">
+                             <number>0</number>
+                            </property>
+                            <property name="bottomMargin">
+                             <number>0</number>
+                            </property>
+                            <item>
+                             <widget class="QWidget" name="pred_widget" native="true">
+                              <property name="minimumSize">
+                               <size>
+                                <width>0</width>
+                                <height>0</height>
+                               </size>
+                              </property>
+                              <layout class="QVBoxLayout" name="verticalLayout_43">
+                               <property name="leftMargin">
+                                <number>0</number>
+                               </property>
+                               <property name="topMargin">
+                                <number>0</number>
+                               </property>
+                               <property name="rightMargin">
+                                <number>0</number>
+                               </property>
+                               <property name="bottomMargin">
+                                <number>0</number>
+                               </property>
+                               <item>
+                                <layout class="QGridLayout" name="gridLayout_8">
+                                 <property name="leftMargin">
+                                  <number>3</number>
+                                 </property>
+                                 <property name="topMargin">
+                                  <number>3</number>
+                                 </property>
+                                 <property name="rightMargin">
+                                  <number>3</number>
+                                 </property>
+                                 <property name="bottomMargin">
+                                  <number>3</number>
+                                 </property>
+                                 <property name="verticalSpacing">
+                                  <number>12</number>
+                                 </property>
+                                 <item row="0" column="1">
+                                  <widget class="QLineEdit" name="predict_images_lineEdit"/>
+                                 </item>
+                                 <item row="1" column="2">
+                                  <widget class="QPushButton" name="predict_model_Button">
+                                   <property name="text">
+                                    <string>Open</string>
+                                   </property>
+                                  </widget>
+                                 </item>
+                                 <item row="1" column="0">
+                                  <widget class="QLabel" name="label_11">
+                                   <property name="text">
+                                    <string>Model path:</string>
+                                   </property>
+                                  </widget>
+                                 </item>
+                                 <item row="0" column="2">
+                                  <widget class="QPushButton" name="predict_images_Button">
+                                   <property name="text">
+                                    <string>Open</string>
+                                   </property>
+                                  </widget>
+                                 </item>
+                                 <item row="0" column="0">
+                                  <widget class="QLabel" name="label_10">
+                                   <property name="text">
+                                    <string>Images path:</string>
+                                   </property>
+                                  </widget>
+                                 </item>
+                                 <item row="2" column="2">
+                                  <widget class="QPushButton" name="predict_save_Button">
+                                   <property name="text">
+                                    <string>Open</string>
+                                   </property>
+                                  </widget>
+                                 </item>
+                                 <item row="1" column="1">
+                                  <widget class="QLineEdit" name="predict_model_lineEdit"/>
+                                 </item>
+                                 <item row="2" column="0">
+                                  <widget class="QLabel" name="label_12">
+                                   <property name="text">
+                                    <string>Save path:</string>
+                                   </property>
+                                  </widget>
+                                 </item>
+                                 <item row="2" column="1">
+                                  <widget class="QLineEdit" name="predict_save_lineEdit">
+                                   <property name="readOnly">
+                                    <bool>true</bool>
+                                   </property>
+                                  </widget>
+                                 </item>
+                                </layout>
+                               </item>
+                               <item>
+                                <layout class="QHBoxLayout" name="horizontalLayout_4">
+                                 <property name="leftMargin">
+                                  <number>3</number>
+                                 </property>
+                                 <property name="topMargin">
+                                  <number>3</number>
+                                 </property>
+                                 <property name="rightMargin">
+                                  <number>3</number>
+                                 </property>
+                                 <property name="bottomMargin">
+                                  <number>3</number>
+                                 </property>
+                                 <item>
+                                  <widget class="QCheckBox" name="bv_ROI_checkBox">
+                                   <property name="text">
+                                    <string>BV ROI Region</string>
+                                   </property>
+                                  </widget>
+                                 </item>
+                                </layout>
+                               </item>
+                               <item>
+                                <widget class="QWidget" name="bv_ROI_widget" native="true">
+                                 <property name="minimumSize">
+                                  <size>
+                                   <width>0</width>
+                                   <height>0</height>
+                                  </size>
+                                 </property>
+                                 <layout class="QVBoxLayout" name="verticalLayout_9">
+                                  <property name="leftMargin">
+                                   <number>0</number>
+                                  </property>
+                                  <property name="topMargin">
+                                   <number>0</number>
+                                  </property>
+                                  <property name="rightMargin">
+                                   <number>0</number>
+                                  </property>
+                                  <property name="bottomMargin">
+                                   <number>0</number>
+                                  </property>
+                                  <item>
+                                   <layout class="QGridLayout" name="gridLayout_13">
+                                    <property name="leftMargin">
+                                     <number>3</number>
+                                    </property>
+                                    <property name="topMargin">
+                                     <number>3</number>
+                                    </property>
+                                    <property name="rightMargin">
+                                     <number>3</number>
+                                    </property>
+                                    <property name="bottomMargin">
+                                     <number>3</number>
+                                    </property>
+                                    <property name="horizontalSpacing">
+                                     <number>12</number>
+                                    </property>
+                                    <property name="verticalSpacing">
+                                     <number>6</number>
+                                    </property>
+                                    <item row="0" column="2">
+                                     <widget class="QLabel" name="label_33">
+                                      <property name="text">
+                                       <string>MaxX:</string>
+                                      </property>
+                                     </widget>
+                                    </item>
+                                    <item row="0" column="0">
+                                     <widget class="QLabel" name="label_7">
+                                      <property name="text">
+                                       <string>MinX:</string>
+                                      </property>
+                                     </widget>
+                                    </item>
+                                    <item row="0" column="4">
+                                     <spacer name="horizontalSpacer_4">
+                                      <property name="orientation">
+                                       <enum>Qt::Horizontal</enum>
+                                      </property>
+                                      <property name="sizeHint" stdset="0">
+                                       <size>
+                                        <width>40</width>
+                                        <height>20</height>
+                                       </size>
+                                      </property>
+                                     </spacer>
+                                    </item>
+                                    <item row="1" column="3">
+                                     <widget class="QSpinBox" name="MaxY_spinBox">
+                                      <property name="sizePolicy">
+                                       <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                                        <horstretch>0</horstretch>
+                                        <verstretch>0</verstretch>
+                                       </sizepolicy>
+                                      </property>
+                                      <property name="minimum">
+                                       <number>0</number>
+                                      </property>
+                                      <property name="maximum">
+                                       <number>99999999</number>
+                                      </property>
+                                      <property name="value">
+                                       <number>512</number>
+                                      </property>
+                                     </widget>
+                                    </item>
+                                    <item row="2" column="3">
+                                     <widget class="QSpinBox" name="MaxZ_spinBox">
+                                      <property name="sizePolicy">
+                                       <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                                        <horstretch>0</horstretch>
+                                        <verstretch>0</verstretch>
+                                       </sizepolicy>
+                                      </property>
+                                      <property name="minimum">
+                                       <number>0</number>
+                                      </property>
+                                      <property name="maximum">
+                                       <number>99999999</number>
+                                      </property>
+                                      <property name="value">
+                                       <number>512</number>
+                                      </property>
+                                     </widget>
+                                    </item>
+                                    <item row="1" column="1">
+                                     <widget class="QSpinBox" name="MinY_spinBox">
+                                      <property name="sizePolicy">
+                                       <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                                        <horstretch>0</horstretch>
+                                        <verstretch>0</verstretch>
+                                       </sizepolicy>
+                                      </property>
+                                      <property name="maximum">
+                                       <number>99999999</number>
+                                      </property>
+                                     </widget>
+                                    </item>
+                                    <item row="1" column="0">
+                                     <widget class="QLabel" name="label_34">
+                                      <property name="text">
+                                       <string>MinY:</string>
+                                      </property>
+                                     </widget>
+                                    </item>
+                                    <item row="2" column="2">
+                                     <widget class="QLabel" name="label_37">
+                                      <property name="text">
+                                       <string>MaxZ:</string>
+                                      </property>
+                                     </widget>
+                                    </item>
+                                    <item row="1" column="2">
+                                     <widget class="QLabel" name="label_35">
+                                      <property name="text">
+                                       <string>MaxY:</string>
+                                      </property>
+                                     </widget>
+                                    </item>
+                                    <item row="2" column="0">
+                                     <widget class="QLabel" name="label_36">
+                                      <property name="text">
+                                       <string>MinZ:</string>
+                                      </property>
+                                     </widget>
+                                    </item>
+                                    <item row="0" column="3">
+                                     <widget class="QSpinBox" name="MaxX_spinBox">
+                                      <property name="sizePolicy">
+                                       <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                                        <horstretch>0</horstretch>
+                                        <verstretch>0</verstretch>
+                                       </sizepolicy>
+                                      </property>
+                                      <property name="minimum">
+                                       <number>0</number>
+                                      </property>
+                                      <property name="maximum">
+                                       <number>99999999</number>
+                                      </property>
+                                      <property name="value">
+                                       <number>512</number>
+                                      </property>
+                                     </widget>
+                                    </item>
+                                    <item row="2" column="1">
+                                     <widget class="QSpinBox" name="MinZ_spinBox">
+                                      <property name="sizePolicy">
+                                       <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                                        <horstretch>0</horstretch>
+                                        <verstretch>0</verstretch>
+                                       </sizepolicy>
+                                      </property>
+                                      <property name="maximum">
+                                       <number>99999999</number>
+                                      </property>
+                                     </widget>
+                                    </item>
+                                    <item row="0" column="1">
+                                     <widget class="QSpinBox" name="MinX_spinBox">
+                                      <property name="sizePolicy">
+                                       <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                                        <horstretch>0</horstretch>
+                                        <verstretch>0</verstretch>
+                                       </sizepolicy>
+                                      </property>
+                                      <property name="maximum">
+                                       <number>99999999</number>
+                                      </property>
+                                     </widget>
+                                    </item>
+                                   </layout>
+                                  </item>
+                                 </layout>
+                                </widget>
+                               </item>
+                               <item>
+                                <layout class="QHBoxLayout" name="horizontalLayout_8">
+                                 <property name="leftMargin">
+                                  <number>3</number>
+                                 </property>
+                                 <property name="topMargin">
+                                  <number>3</number>
+                                 </property>
+                                 <property name="rightMargin">
+                                  <number>3</number>
+                                 </property>
+                                 <property name="bottomMargin">
+                                  <number>3</number>
+                                 </property>
+                                 <item>
+                                  <widget class="QLabel" name="label_25">
+                                   <property name="text">
+                                    <string>Level：</string>
+                                   </property>
+                                  </widget>
+                                 </item>
+                                 <item>
+                                  <widget class="QSpinBox" name="predict_level_spinBox">
+                                   <property name="sizePolicy">
+                                    <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                                     <horstretch>0</horstretch>
+                                     <verstretch>0</verstretch>
+                                    </sizepolicy>
+                                   </property>
+                                   <property name="styleSheet">
+                                    <string notr="true">background-color: rgb(70, 80, 100);</string>
+                                   </property>
+                                  </widget>
+                                 </item>
+                                </layout>
+                               </item>
+                               <item>
+                                <layout class="QHBoxLayout" name="horizontalLayout">
+                                 <property name="leftMargin">
+                                  <number>3</number>
+                                 </property>
+                                 <property name="topMargin">
+                                  <number>3</number>
+                                 </property>
+                                 <property name="rightMargin">
+                                  <number>3</number>
+                                 </property>
+                                 <property name="bottomMargin">
+                                  <number>3</number>
+                                 </property>
+                                 <item>
+                                  <widget class="QLabel" name="label_5">
+                                   <property name="text">
+                                    <string>Data Type:</string>
+                                   </property>
+                                  </widget>
+                                 </item>
+                                 <item>
+                                  <widget class="QComboBox" name="data_type_combo">
+                                   <property name="sizePolicy">
+                                    <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                                     <horstretch>0</horstretch>
+                                     <verstretch>0</verstretch>
+                                    </sizepolicy>
+                                   </property>
+                                   <property name="currentText">
+                                    <string>cell</string>
+                                   </property>
+                                   <item>
+                                    <property name="text">
+                                     <string>cell</string>
+                                    </property>
+                                   </item>
+                                   <item>
+                                    <property name="text">
+                                     <string>neuron</string>
+                                    </property>
+                                   </item>
+                                   <item>
+                                    <property name="text">
+                                     <string>vessel</string>
+                                    </property>
+                                   </item>
+                                  </widget>
+                                 </item>
+                                </layout>
+                               </item>
+                               <item>
+                                <spacer name="verticalSpacer">
+                                 <property name="orientation">
+                                  <enum>Qt::Vertical</enum>
+                                 </property>
+                                 <property name="sizeHint" stdset="0">
+                                  <size>
+                                   <width>20</width>
+                                   <height>40</height>
+                                  </size>
+                                 </property>
+                                </spacer>
+                               </item>
+                              </layout>
+                             </widget>
+                            </item>
+                           </layout>
+                          </widget>
+                          <widget class="QWidget" name="splice_page">
+                           <layout class="QVBoxLayout" name="verticalLayout_8">
+                            <property name="leftMargin">
+                             <number>0</number>
+                            </property>
+                            <property name="topMargin">
+                             <number>0</number>
+                            </property>
+                            <property name="rightMargin">
+                             <number>0</number>
+                            </property>
+                            <property name="bottomMargin">
+                             <number>0</number>
+                            </property>
+                            <item>
+                             <widget class="QWidget" name="splice_widget" native="true">
+                              <layout class="QVBoxLayout" name="verticalLayout_41">
+                               <property name="leftMargin">
+                                <number>0</number>
+                               </property>
+                               <property name="topMargin">
+                                <number>0</number>
+                               </property>
+                               <property name="rightMargin">
+                                <number>0</number>
+                               </property>
+                               <property name="bottomMargin">
+                                <number>0</number>
+                               </property>
+                               <item>
+                                <layout class="QGridLayout" name="gridLayout_6">
+                                 <property name="leftMargin">
+                                  <number>3</number>
+                                 </property>
+                                 <property name="topMargin">
+                                  <number>3</number>
+                                 </property>
+                                 <property name="rightMargin">
+                                  <number>3</number>
+                                 </property>
+                                 <property name="bottomMargin">
+                                  <number>3</number>
+                                 </property>
+                                 <property name="verticalSpacing">
+                                  <number>12</number>
+                                 </property>
+                                 <item row="0" column="0">
+                                  <widget class="QLabel" name="label_23">
+                                   <property name="text">
+                                    <string>Configuration path:</string>
+                                   </property>
+                                  </widget>
+                                 </item>
+                                 <item row="0" column="2">
+                                  <widget class="QPushButton" name="splice_cfg_Button">
+                                   <property name="text">
+                                    <string>Open</string>
+                                   </property>
+                                  </widget>
+                                 </item>
+                                 <item row="0" column="1">
+                                  <widget class="QLineEdit" name="splice_cfg_lineEdit"/>
+                                 </item>
+                                 <item row="1" column="0">
+                                  <widget class="QLabel" name="label_24">
+                                   <property name="text">
+                                    <string>Save path:</string>
+                                   </property>
+                                  </widget>
+                                 </item>
+                                 <item row="1" column="2">
+                                  <widget class="QPushButton" name="splice_save_Button">
+                                   <property name="text">
+                                    <string>Open</string>
+                                   </property>
+                                  </widget>
+                                 </item>
+                                 <item row="1" column="1">
+                                  <widget class="QLineEdit" name="splice_save_lineEdit">
+                                   <property name="readOnly">
+                                    <bool>true</bool>
+                                   </property>
+                                  </widget>
+                                 </item>
+                                </layout>
+                               </item>
+                              </layout>
+                             </widget>
+                            </item>
+                            <item>
+                             <spacer name="verticalSpacer_2">
+                              <property name="orientation">
+                               <enum>Qt::Vertical</enum>
+                              </property>
+                              <property name="sizeHint" stdset="0">
+                               <size>
+                                <width>20</width>
+                                <height>214</height>
+                               </size>
+                              </property>
+                             </spacer>
+                            </item>
+                           </layout>
+                          </widget>
+                         </widget>
+                        </item>
+                        <item>
+                         <layout class="QHBoxLayout" name="horizontalLayout_9">
+                          <property name="leftMargin">
+                           <number>3</number>
+                          </property>
+                          <property name="topMargin">
+                           <number>3</number>
+                          </property>
+                          <property name="rightMargin">
+                           <number>3</number>
+                          </property>
+                          <property name="bottomMargin">
+                           <number>3</number>
+                          </property>
+                          <item>
+                           <spacer name="horizontalSpacer_3">
+                            <property name="orientation">
+                             <enum>Qt::Horizontal</enum>
+                            </property>
+                            <property name="sizeType">
+                             <enum>QSizePolicy::Expanding</enum>
+                            </property>
+                            <property name="sizeHint" stdset="0">
+                             <size>
+                              <width>40</width>
+                              <height>20</height>
+                             </size>
+                            </property>
+                           </spacer>
+                          </item>
+                          <item>
+                           <widget class="QPushButton" name="predict_start_Button">
+                            <property name="text">
+                             <string>Start Prediction</string>
+                            </property>
+                           </widget>
+                          </item>
+                          <item>
+                           <widget class="QPushButton" name="splice_start_Button">
+                            <property name="text">
+                             <string>Start Splice</string>
+                            </property>
+                           </widget>
+                          </item>
+                         </layout>
+                        </item>
+                       </layout>
+                      </item>
+                     </layout>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QWidget" name="predict_info_widget" native="true">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                    <horstretch>0</horstretch>
+                    <verstretch>11</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <layout class="QVBoxLayout" name="verticalLayout_18">
+                   <property name="leftMargin">
+                    <number>3</number>
+                   </property>
+                   <property name="topMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="rightMargin">
+                    <number>3</number>
+                   </property>
+                   <property name="bottomMargin">
+                    <number>3</number>
+                   </property>
+                   <item>
+                    <widget class="QGroupBox" name="predict_info_groupBox">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>0</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">QGroupBox#predict_info_groupBox
+{
+	border: 1px solid rgb(70,80,100);
+	margin-top: 3.0ex;
+}
+QGroupBox#predict_info_groupBox::title
+{
+	subcontrol-origin:margin;
+	left: 10px;
+}</string>
+                     </property>
+                     <property name="title">
+                      <string>Hint Text </string>
+                     </property>
+                     <layout class="QVBoxLayout" name="verticalLayout_21">
+                      <property name="leftMargin">
+                       <number>3</number>
+                      </property>
+                      <property name="topMargin">
+                       <number>9</number>
+                      </property>
+                      <property name="rightMargin">
+                       <number>3</number>
+                      </property>
+                      <property name="bottomMargin">
+                       <number>3</number>
+                      </property>
+                      <item>
+                       <layout class="QVBoxLayout" name="verticalLayout_20">
+                        <property name="leftMargin">
+                         <number>0</number>
+                        </property>
+                        <item>
+                         <widget class="QTextBrowser" name="predict_info_textBrowser">
+                          <property name="styleSheet">
+                           <string notr="true">QTextBrowser#predict_info_textBrowser {
+	border: 1px solid rgb(70,80,100);
+}</string>
+                          </property>
+                          <property name="html">
+                           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'微软雅黑'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Prediction&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;1. Model Prediction&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#ffcf0f;&quot;&gt;Images path&lt;/span&gt;: Click &amp;quot;Open&amp;quot; to select 3D Tif format image or the folder path where the entire BV format image (including config.cfg) is located.&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#ffcf0f;&quot;&gt;Model path&lt;/span&gt;: Click &amp;quot;Open&amp;quot; to select the trained model.&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#ffcf0f;&quot;&gt;Save path&lt;/span&gt;: Click &amp;quot;Open&amp;quot; to select the folder path where the prediction results will be saved.&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#ffcf0f;&quot;&gt;BV ROI Region&lt;/span&gt;: Set the ROI region range in BV format.&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#ffcf0f;&quot;&gt;Level&lt;/span&gt;: The reduction sampling level for BV format data prediction. The lower the level, the higher the resolution.&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Click &amp;quot;Start Prediction&amp;quot; to begin. &lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;2. Result Splicing&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#ffcf0f;&quot;&gt;Configuration path&lt;/span&gt;: Click &amp;quot;Open&amp;quot; and select the &amp;quot;prediction.json&amp;quot; configuration file.&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#ffcf0f;&quot;&gt;Save path&lt;/span&gt;: Click &amp;quot;Open&amp;quot; to select the folder path for saving the spliced results.&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Click &amp;quot;Start Splice&amp;quot; to begin.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#ffcf0f;&quot;&gt;Data Type&lt;/span&gt;: Select the type of image to process.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                          </property>
+                         </widget>
+                        </item>
+                       </layout>
+                      </item>
+                     </layout>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QFrame" name="PredictFrame">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+               <horstretch>36</horstretch>
+               <verstretch>1</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QWidget#PredictFrame {
+	border: 1px solid rgb(70,80,100);
+}</string>
+             </property>
+             <property name="frameShape">
+              <enum>QFrame::StyledPanel</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Raised</enum>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_15">
+              <property name="leftMargin">
+               <number>3</number>
+              </property>
+              <property name="topMargin">
+               <number>3</number>
+              </property>
+              <property name="rightMargin">
+               <number>3</number>
+              </property>
+              <property name="bottomMargin">
+               <number>3</number>
+              </property>
+              <item>
+               <widget class="QGroupBox" name="predict_progress_groupBox">
+                <property name="styleSheet">
+                 <string notr="true">QGroupBox#predict_progress_groupBox
+{
+	border: 1px solid rgb(70,80,100);
+	margin-top: 3.0ex;
+}
+QGroupBox#predict_progress_groupBox::title
+{
+	subcontrol-origin:margin;
+	left: 10px;
+}</string>
+                </property>
+                <property name="title">
+                 <string>Progress Bar</string>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_24">
+                 <property name="leftMargin">
+                  <number>3</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>3</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>3</number>
+                 </property>
+                 <item>
+                  <layout class="QVBoxLayout" name="verticalLayout_4">
+                   <item>
+                    <widget class="QListWidget" name="predict_result_listWidget">
+                     <property name="styleSheet">
+                      <string notr="true"/>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

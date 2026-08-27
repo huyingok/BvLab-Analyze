@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>layer_cut_Form</class>
+ <widget class="QWidget" name="layer_cut_Form">
+  <property name="windowModality">
+   <enum>Qt::WindowModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>318</width>
+    <height>466</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>LayerCutWidget</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(25, 35, 45);
+color: rgb(255, 255, 255);
+font: 9pt &quot;微软雅黑&quot;;
+</string>
+  </property>
+  <layout class="QHBoxLayout" name="layer_cut_Form_hbox">
+   <property name="leftMargin">
+    <number>9</number>
+   </property>
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <layout class="QVBoxLayout" name="xy_vbox">
+       <property name="spacing">
+        <number>3</number>
+       </property>
+       <item>
+        <layout class="QHBoxLayout" name="z_cut_hbox">
+         <item>
+          <widget class="QLabel" name="z_cut_label">
+           <property name="text">
+            <string>Z cut</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="z_cut_hsp">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QListWidget" name="z_list">
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="xy_cut_hbox">
+         <item>
+          <widget class="QLabel" name="xy_cut_label">
+           <property name="text">
+            <string>XY cut</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="xy_cut_hsp">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QTableWidget" name="table_widget"/>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="xy_button_hbox">
+         <item>
+          <widget class="QPushButton" name="recovery_xy_button">
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(25, 35, 45);
+color: rgb(255, 255, 255);</string>
+           </property>
+           <property name="text">
+            <string>Restore XY</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="recovery_z_button">
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(25, 35, 45);
+color: rgb(255, 255, 255);
+</string>
+           </property>
+           <property name="text">
+            <string>Restore Z</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="QWidget" name="widget" native="true">
+       <property name="styleSheet">
+        <string notr="true">QWidget#layer_set_widge {
+	border: 1px solid rgb(70,80,100);
+}</string>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_9">
+        <property name="spacing">
+         <number>6</number>
+        </property>
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <layout class="QGridLayout" name="gridLayout">
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <property name="spacing">
+           <number>6</number>
+          </property>
+          <item row="0" column="5">
+           <widget class="QLabel" name="z_redun_label">
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
+            <property name="text">
+             <string>Redun Z:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="8">
+           <spacer name="horizontalSpacer_4">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="x_step_label">
+            <property name="text">
+             <string>Step X:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="5">
+           <widget class="QLabel" name="y_redun_label">
+            <property name="text">
+             <string>Redun Y:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="7">
+           <widget class="QLabel" name="y_redun_limit">
+            <property name="text">
+             <string>↑</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="4">
+           <spacer name="horizontalSpacer_11">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="1" column="7">
+           <widget class="QLabel" name="x_redun_limit">
+            <property name="text">
+             <string>↑</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="4">
+           <spacer name="horizontalSpacer_9">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="0" column="8">
+           <spacer name="horizontalSpacer_5">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="0" column="2">
+           <widget class="QDoubleSpinBox" name="z_step_num">
+            <property name="styleSheet">
+             <string notr="true">border-color: rgb(25, 35, 45);
+background-color: rgb(70, 80, 100);</string>
+            </property>
+            <property name="decimals">
+             <number>0</number>
+            </property>
+            <property name="minimum">
+             <double>1.000000000000000</double>
+            </property>
+            <property name="maximum">
+             <double>9999.000000000000000</double>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="2">
+           <widget class="QDoubleSpinBox" name="y_step_num">
+            <property name="styleSheet">
+             <string notr="true">border-color: rgb(25, 35, 45);
+background-color: rgb(70, 80, 100);</string>
+            </property>
+            <property name="decimals">
+             <number>0</number>
+            </property>
+            <property name="minimum">
+             <double>1.000000000000000</double>
+            </property>
+            <property name="maximum">
+             <double>9999.000000000000000</double>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="6">
+           <widget class="QDoubleSpinBox" name="y_redun_num">
+            <property name="styleSheet">
+             <string notr="true">border-color: rgb(25, 35, 45);
+background-color: rgb(70, 80, 100);</string>
+            </property>
+            <property name="decimals">
+             <number>0</number>
+            </property>
+            <property name="maximum">
+             <double>9999.000000000000000</double>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="6">
+           <widget class="QDoubleSpinBox" name="x_redun_num">
+            <property name="styleSheet">
+             <string notr="true">border-color: rgb(25, 35, 45);
+background-color: rgb(70, 80, 100);</string>
+            </property>
+            <property name="decimals">
+             <number>0</number>
+            </property>
+            <property name="maximum">
+             <double>9999.000000000000000</double>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="QLabel" name="z_step_label">
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
+            <property name="text">
+             <string>Step Z:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="2">
+           <widget class="QDoubleSpinBox" name="x_step_num">
+            <property name="styleSheet">
+             <string notr="true">border-color: rgb(25, 35, 45);
+background-color: rgb(70, 80, 100);</string>
+            </property>
+            <property name="decimals">
+             <number>0</number>
+            </property>
+            <property name="minimum">
+             <double>1.000000000000000</double>
+            </property>
+            <property name="maximum">
+             <double>9999.000000000000000</double>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="y_step_label">
+            <property name="text">
+             <string>Step Y:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="8">
+           <spacer name="horizontalSpacer_12">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="0" column="7">
+           <widget class="QLabel" name="z_redun_limit">
+            <property name="text">
+             <string>↑</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="6">
+           <widget class="QDoubleSpinBox" name="z_redun_num">
+            <property name="styleSheet">
+             <string notr="true">border-color: rgb(25, 35, 45);
+background-color: rgb(70, 80, 100);</string>
+            </property>
+            <property name="decimals">
+             <number>0</number>
+            </property>
+            <property name="maximum">
+             <double>9999.000000000000000</double>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="4">
+           <spacer name="horizontalSpacer_14">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="1" column="5">
+           <widget class="QLabel" name="x_redun_label">
+            <property name="text">
+             <string>Redun X:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLabel" name="z_step_limit">
+            <property name="text">
+             <string>↓</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QLabel" name="x_step_limit">
+            <property name="text">
+             <string>↓</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QLabel" name="y_step_limit">
+            <property name="text">
+             <string>↓</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <item>
+           <widget class="QLabel" name="label">
+            <property name="text">
+             <string>Remove edge-redundant annotations: </string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="remove_edge_button">
+            <property name="text">
+             <string>Delete</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <spacer name="verticalSpacer">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

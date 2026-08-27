@@ -1,0 +1,11 @@
+一、全脑数据自动筛选训练集
+    1、修改"config/NeuronConfig_1.ini"中的参数
+        修改参数时，提供检测按钮
+        点击检测按钮，调用"ViewInfo.py"文件中的GetBigBVLevelInfo函数查看当前需读取的块数
+        从而调整"config/NeuronConfig_1.ini"中的smapleXYZ参数
+    2、运行main.py
+二、使用软件人工对算法筛选出来的数据再次筛选
+三、筛选完成后软件需提供把筛选好的数据提取出来的功能
+四、软件需提供标注功能，标注筛选出来的数据
+五、使用MulSwcToMask.py将标记好的swc转换成mask图像
+六、使用DataSetDivideToTxt.py划分数据集

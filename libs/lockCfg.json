@@ -1,0 +1,42 @@
+{
+    "root": "F:\\LiAnAn-233100-CH1-BV",
+    "saveRoot": "D:\\SY\\10GTestData\\10GNeuralTestData\\block_2000\\Images2",
+    "rectBoxLs": [
+        [
+            [
+                2139,
+                4047,
+                1794
+            ],
+            [
+                25657,
+                18002,
+                11344
+            ]
+        ]
+    ],
+    "n_clusters": 1000,
+    "getClsNum": 1,
+    "MNumber": 5,
+    "level": 0,
+    "sampleXYZ": [
+        6,
+        6,
+        2
+    ],
+    "smallBatchSize": [
+        192,
+        192,
+        192
+    ],
+    "batchSize": [
+        512,
+        512,
+        192
+    ],
+    "redunSize": [
+        32,
+        32,
+        32
+    ]
+}
