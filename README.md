@@ -90,7 +90,6 @@ Input images, SWC labels, and a config file; set resolution and units. Outputs p
 | `SwcToMask/` | SWC to mask conversion |
 | `ViewWidget/`, `cell_points_marking/`, `line_points_marking/`, `vessel_lines_marking/` | Visualization and annotation |
 | `BVExample/` | BV data reading |
-| `DefaultModels/` | Default weights (Cell / Neural / Vessel) |
 
 ## Appendix: SWC Format
 
