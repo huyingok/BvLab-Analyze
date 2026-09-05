@@ -397,25 +397,30 @@ def start_zarr(divide_results_dir, img_dir, divide_img_dir, makerInfo,
     TrainDataSetFiterPath = join(save_root, "TrainDataSetFiter")
     os.makedirs(TrainDataSetFiterPath, exist_ok=True)
     BatchIdLsPath = join(TrainDataSetFiterPath, "BatchIdLs.txt")
-
+    MIN_Counts = 20000
     batchIdLs = set()
     SignBatchNumber = Util.SliceBatch(batchSize, smallSize, redunSize)
     SignBatchNumber = len(SignBatchNumber)
     for rect in rectLs:
         low, up = RectLimitBatchId(rect, level, batchSize)
         up = up + (up == 0) * 1  # 防止只有一块小于batchSize的数据块丢失
-        # up_add = up * np.array([3, 3, 1])  # 按比例扩充xy方向尺寸
         up_add = up * np.array([round(batchSize_x / smallSize[0]),
                                 round(batchSize_y / smallSize[1]), 1])  # 按比例扩充xy方向尺寸
         res = np.ceil(np.array(up_add) / np.array(sampleXYZ))
-        res_sum = np.prod(res) * SignBatchNumber
+        res_sum = np.prod(res)
+        if res_sum > MIN_Counts:
+            res = {
+                "error": 0,
+                "text": ""
+            }
+            return res, "No sampleXYZ"
         BigImgSize_xyz = np.array(BigImgSize / np.min(BigImgSize), dtype=np.int32)
         new_BigImgSize_xyz = BigImgSize_xyz - 1
         sum_num = np.sum(BigImgSize_xyz)
         old_sampleXYZ = sampleXYZ
         print(f"Spacing {sampleXYZ}, Total blocks: ", res_sum)
         i = -1
-        while res_sum > 200000:  # 限制提取特征块数
+        while res_sum > MIN_Counts:  # 限制提取特征块数
             i += 1
             if i == 0:
                 sampleXYZ = new_BigImgSize_xyz + (BigImgSize_xyz == 1)
@@ -429,7 +434,7 @@ def start_zarr(divide_results_dir, img_dir, divide_img_dir, makerInfo,
                     np.max(np.abs(sampleXYZ - np.array([1, 1, 1]))) == 0):
                 continue
             res = np.ceil(np.array(up_add) / sampleXYZ)
-            res_sum = np.prod(res) * SignBatchNumber
+            res_sum = np.prod(res)
             print(f"After adjusting spacing {sampleXYZ}, total blocks: ", res_sum)
         for nz in range(low[2], up[2], sampleXYZ[2]):
             for ny in range(low[1], up[1], sampleXYZ[1]):

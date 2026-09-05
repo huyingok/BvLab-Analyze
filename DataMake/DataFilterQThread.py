@@ -10,7 +10,7 @@ import os
 import numpy as np
 import random
 import tifffile as tiff
-from DataMake import DataMaker, DataMakerOfBV, DataMakerOfZarr
+from DataMake import DataMaker, DataMakerOfBV, DataMakerOfZarr, DataMakerOfBV_4Parts, DataMakerOfZarr_4Parts
 
 
 class DataFilterQThread(QThread):
@@ -24,7 +24,9 @@ class DataFilterQThread(QThread):
         self.win = kwargs.get('win')
         self.DataMaker = DataMaker
         self.DataMakerOfBV = DataMakerOfBV
+        self.DataMakerOfBV_4Parts = DataMakerOfBV_4Parts
         self.DataMakerOfZarr = DataMakerOfZarr
+        self.DataMakerOfZarr_4Parts = DataMakerOfZarr_4Parts
         self.logger = self.win.logger
 
     def run(self):
@@ -62,11 +64,28 @@ class DataFilterQThread(QThread):
                                                                  make_arguments, progress0=self.progress0,
                                                                  error0=self.error0, division_ratio=division_ratio_2,
                                                                  logger=self.logger, cfg_level=cfg_level, bv_ROI=bv_ROI)
+                if division_text == "No sampleXYZ":
+                    print("No sampleXYZ!")
+                    res, division_text = self.DataMakerOfBV_4Parts.start_bv(divide_results_dir, img_dir, divide_img_dir,
+                                                                            make_arguments, progress0=self.progress0,
+                                                                            error0=self.error0,
+                                                                            division_ratio=division_ratio_2,
+                                                                            logger=self.logger, cfg_level=cfg_level,
+                                                                            bv_ROI=bv_ROI)
             elif select_input_index == 3:
                 res, division_text = self.DataMakerOfZarr.start_zarr(divide_results_dir, img_dir, divide_img_dir,
                                                                      make_arguments, progress0=self.progress0,
-                                                                     error0=self.error0, division_ratio=division_ratio_2,
+                                                                     error0=self.error0,
+                                                                     division_ratio=division_ratio_2,
                                                                      logger=self.logger, cfg_level=cfg_level)
+                if division_text == "No sampleXYZ":
+                    print("No sampleXYZ!")
+                    res, division_text = self.DataMakerOfZarr_4Parts.start_zarr(divide_results_dir, img_dir,
+                                                                                divide_img_dir, make_arguments,
+                                                                                progress0=self.progress0,
+                                                                                error0=self.error0,
+                                                                                division_ratio=division_ratio_2,
+                                                                                logger=self.logger, cfg_level=cfg_level)
             else:
                 res, division_text = self.DataMaker.start_one(divide_results_dir, cut_img_dir, cut_swc_dir,
                                                               divide_img_dir, divide_swc_dir, make_arguments,
