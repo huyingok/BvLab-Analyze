@@ -26,7 +26,7 @@ python BVLabAnalyzer.py
 
 ## Documentation and Tutorial
 
-Alongside this quick start guide, a comprehensive user manual is available in `BVLab_Analyzer_user_guide_en.docx`. For a visual walkthrough, a screen recording video illustrating the typical analysis pipeline is provided as `Video of the typical analysis pipeline.mp4`. We recommend reviewing both resources before starting your first project.
+Alongside this quick start guide, a comprehensive user manual is available in `BVLab_Analyzer_user_guide_en.docx`. For a visual walkthrough, a screen recording video illustrating the typical analysis pipeline is provided as `Video_of_the_typical_analysis_pipeline.mp4`. We recommend reviewing both resources before starting your first project.
 
 ## Data Formats
 
