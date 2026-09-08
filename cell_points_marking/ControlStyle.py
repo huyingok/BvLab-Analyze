@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 button_style = """
     QPushButton {background: rgb(70,80,100); color: rgb(255,255,255); border: 1px solid rgb(70,80,100); 
-    padding: 2px 2px; border-radius: 0px; font: 9pt \"微软雅黑\"; min-width: 60px; height: 20px;}
+    padding: 2px 2px; border-radius: 0px; font: 9pt \"微软雅黑\"; height: 20px;}
     QPushButton:hover { background-color: #379eff; border: 1px solid #379eff; border-radius: 0px;}
 """
 lineedit_style = """

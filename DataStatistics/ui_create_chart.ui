@@ -17,7 +17,7 @@
    <property name="styleSheet">
     <string notr="true">color: rgb(255, 255, 255);
 background-color: rgb(25, 35, 45);
-font: 9pt &quot;微软雅黑&quot;;</string>
+font: 9pt &quot;Microsoft YaHei&quot;;</string>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
     <property name="leftMargin">

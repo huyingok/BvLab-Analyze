@@ -16,7 +16,7 @@ class Ui_xyz_px_dialog(object):
         xyz_px_dialog.setObjectName("xyz_px_dialog")
         xyz_px_dialog.resize(279, 153)
         xyz_px_dialog.setStyleSheet("background-color: rgb(25, 35, 45);\n"
-"font: 9pt \"微软雅黑\";\n"
+"font: 9pt \"Microsoft YaHei\";\n"
 "color: rgb(255, 255, 255);")
         self.xyz_px_dialog_hbox = QtWidgets.QHBoxLayout(xyz_px_dialog)
         self.xyz_px_dialog_hbox.setObjectName("xyz_px_dialog_hbox")

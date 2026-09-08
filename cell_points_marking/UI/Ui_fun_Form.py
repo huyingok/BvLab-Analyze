@@ -17,7 +17,7 @@ class Ui_fun_Form(object):
         fun_Form.resize(436, 379)
         fun_Form.setStyleSheet("color: rgb(255, 255, 255);\n"
 "background-color: rgb(25, 35, 45);\n"
-"font: 9pt \"微软雅黑\";")
+"font: 9pt \"Microsoft YaHei\";")
         self.fun_from_hbox = QtWidgets.QHBoxLayout(fun_Form)
         self.fun_from_hbox.setContentsMargins(9, -1, -1, -1)
         self.fun_from_hbox.setObjectName("fun_from_hbox")

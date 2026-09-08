@@ -17,7 +17,7 @@ class Ui_ShortCutDialog(object):
         ShortCutDialog.resize(689, 620)
         ShortCutDialog.setStyleSheet("color: rgb(255, 255, 255);\n"
 "background-color: rgb(25, 35, 45);\n"
-"font: 9pt \"微软雅黑\";")
+"font: 9pt \"Microsoft YaHei\";")
         self.verticalLayout = QtWidgets.QVBoxLayout(ShortCutDialog)
         self.verticalLayout.setObjectName("verticalLayout")
         self.horizontalLayout = QtWidgets.QHBoxLayout()
@@ -180,15 +180,13 @@ class Ui_ShortCutDialog(object):
         self.textBrowser.setHtml(_translate("ShortCutDialog", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'微软雅黑\'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#ff0000;\">Red mark</span> indicates selected mark</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#0059ff;\">Blue mark</span> indicates non-special mark</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#37ff00;\">Green mark</span> indicates edge mark</p></body></html>"))
+"</style></head><body style=\" font-family:\'Microsoft YaHei\'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#ff0000;\">Red mark</span> indicates selected mark</p></body></html>"))
         self.Fun_groupBox.setTitle(_translate("ShortCutDialog", "Keyboard Shortcuts"))
         self.textBrowser_2.setHtml(_translate("ShortCutDialog", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'微软雅黑\'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+"</style></head><body style=\" font-family:\'Microsoft YaHei\'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Click the button under <span style=\" color:#ffcf0f;\">Keybinding</span>, edit the text under <span style=\" color:#ffcf0f;\">Edit</span> (by pressing a key and then Enter) to modify the shortcut, and click <span style=\" color:#ffcf0f;\">OK</span> to complete the modification.</p></body></html>"))
         __sortingEnabled = self.listWidget.isSortingEnabled()
         self.listWidget.setSortingEnabled(False)

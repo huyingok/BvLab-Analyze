@@ -18,7 +18,7 @@ class Ui_layer_cut_Form(object):
         layer_cut_Form.resize(318, 466)
         layer_cut_Form.setStyleSheet("background-color: rgb(25, 35, 45);\n"
 "color: rgb(255, 255, 255);\n"
-"font: 9pt \"微软雅黑\";\n"
+"font: 9pt \"Microsoft YaHei\";\n"
 "")
         self.layer_cut_Form_hbox = QtWidgets.QHBoxLayout(layer_cut_Form)
         self.layer_cut_Form_hbox.setContentsMargins(9, -1, -1, -1)

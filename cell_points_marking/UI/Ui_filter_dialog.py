@@ -16,7 +16,7 @@ class Ui_filter_dialog(object):
         filter_dialog.setObjectName("filter_dialog")
         filter_dialog.resize(508, 142)
         filter_dialog.setStyleSheet("color: rgb(255, 255, 255);\n"
-"font: 9pt \"微软雅黑\";\n"
+"font: 9pt \"Microsoft YaHei\";\n"
 "background-color: rgb(25, 35, 45);")
         self.verticalLayout = QtWidgets.QVBoxLayout(filter_dialog)
         self.verticalLayout.setObjectName("verticalLayout")

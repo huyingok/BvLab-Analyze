@@ -16,7 +16,7 @@ class Ui_select_path_dialog(object):
         select_path_dialog.setObjectName("select_path_dialog")
         select_path_dialog.resize(595, 361)
         select_path_dialog.setStyleSheet("color: rgb(255, 255, 255);\n"
-"font: 9pt \"微软雅黑\";\n"
+"font: 9pt \"Microsoft YaHei\";\n"
 "background-color: rgb(25, 35, 45);")
         self.select_path_dialog_hbox = QtWidgets.QHBoxLayout(select_path_dialog)
         self.select_path_dialog_hbox.setObjectName("select_path_dialog_hbox")

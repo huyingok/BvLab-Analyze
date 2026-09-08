@@ -18,7 +18,7 @@ class Ui_MainWindow(object):
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setStyleSheet("color: rgb(255, 255, 255);\n"
 "background-color: rgb(25, 35, 45);\n"
-"font: 9pt \"微软雅黑\";")
+"font: 9pt \"Microsoft YaHei\";")
         self.centralwidget.setObjectName("centralwidget")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.centralwidget)
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)

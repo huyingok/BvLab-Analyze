@@ -19,7 +19,7 @@
   <property name="styleSheet">
    <string notr="true">background-color: rgb(25, 35, 45);
 color: rgb(255, 255, 255);
-font: 9pt &quot;微软雅黑&quot;;
+font: 9pt &quot;Microsoft YaHei&quot;;
 </string>
   </property>
   <layout class="QHBoxLayout" name="layer_cut_Form_hbox">

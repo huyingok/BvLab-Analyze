@@ -15,7 +15,7 @@
   </property>
   <property name="styleSheet">
    <string notr="true">background-color: rgb(25, 35, 45);
-font: 9pt &quot;微软雅黑&quot;;
+font: 9pt &quot;Microsoft YaHei&quot;;
 color: rgb(255, 255, 255);</string>
   </property>
   <layout class="QHBoxLayout" name="xyz_px_dialog_hbox">
@@ -24,7 +24,7 @@ color: rgb(255, 255, 255);</string>
      <item>
       <widget class="QGroupBox" name="xyz_groupbox">
        <property name="styleSheet">
-        <string notr="true">font: 9pt &quot;微软雅黑&quot;;
+        <string notr="true">font: 9pt &quot;Microsoft YaHei&quot;;
 color: rgb(255, 255, 255);</string>
        </property>
        <property name="title">
@@ -45,7 +45,7 @@ color: rgb(255, 255, 255);</string>
               </property>
               <property name="styleSheet">
                <string notr="true">color: rgb(255, 255, 255);
-font: 9pt &quot;微软雅黑&quot;;</string>
+font: 9pt &quot;Microsoft YaHei&quot;;</string>
               </property>
               <property name="frameShape">
                <enum>QFrame::StyledPanel</enum>
@@ -79,7 +79,7 @@ font: 9pt &quot;微软雅黑&quot;;</string>
              <widget class="QLabel" name="y_px_label">
               <property name="styleSheet">
                <string notr="true">color: rgb(255, 255, 255);
-font: 9pt &quot;微软雅黑&quot;;</string>
+font: 9pt &quot;Microsoft YaHei&quot;;</string>
               </property>
               <property name="frameShape">
                <enum>QFrame::StyledPanel</enum>
@@ -107,7 +107,7 @@ font: 9pt &quot;微软雅黑&quot;;</string>
              <widget class="QLabel" name="z_px_label">
               <property name="styleSheet">
                <string notr="true">color: rgb(255, 255, 255);
-font: 9pt &quot;微软雅黑&quot;;</string>
+font: 9pt &quot;Microsoft YaHei&quot;;</string>
               </property>
               <property name="frameShape">
                <enum>QFrame::StyledPanel</enum>

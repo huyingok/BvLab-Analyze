@@ -21,7 +21,7 @@ from DataStatistics.ui_create_chart import Ui_MainWindow
 
 # Set Global Font to Times New Roman
 # plt.rcParams['font.family'] = 'Times New Roman'
-plt.rcParams['font.family'] = 'Microsoft YaHei'  # '微软雅黑'
+plt.rcParams['font.family'] = 'Microsoft YaHei'  # 'Microsoft YaHei'
 
 
 class PandasModel(QAbstractTableModel):
