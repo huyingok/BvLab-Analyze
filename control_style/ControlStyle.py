@@ -89,6 +89,9 @@ QComboBox {
     height: 20px;
 }
 """
+label_style = """
+    QToolTip {background-color: rgb(70,80,100); color: rgb(255,255,255); border: 1px solid rgb(70,80,100); }
+"""
 tool_button_style = """
     QPushButton {background-color: rgb(70,80,100); color: rgb(255,255,255); 
                  border: 1px solid rgb(70,80,100); min-width: 28px; height: 26px;}

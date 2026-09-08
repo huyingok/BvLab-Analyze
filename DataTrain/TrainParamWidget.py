@@ -8,7 +8,7 @@ from PyQt5.QtCore import Qt, QSize
 from PyQt5.QtWidgets import QSplitter, QMessageBox, QWidget, QApplication, QListWidget
 from PyQt5.QtGui import QIcon
 import qdarkstyle
-from control_style.ControlStyle import (button_alpha_style, button_style, lineedit_style, spin_style,
+from control_style.ControlStyle import (label_style, button_style, lineedit_style, spin_style,
                                         double_spin_qdarkstyle, messagebox_style, comboBox_style, tool_button_style)
 
 
@@ -51,6 +51,12 @@ class TrainParamWidget(QWidget, Ui_Train_Param_Form):
         self.tp_vs_sBox.setStyleSheet(self.qdarkstyle_sheet + spin_style)
         self.tp_esp_sBox.setStyleSheet(self.qdarkstyle_sheet + spin_style)
         self.tp_default_btn.setStyleSheet(button_style)
+        self.lr_q_label.setStyleSheet(label_style)
+        self.wd_q_label.setStyleSheet(label_style)
+        self.bs_q_label.setStyleSheet(label_style)
+        self.vbs_q_label.setStyleSheet(label_style)
+        self.vs_q_label.setStyleSheet(label_style)
+        self.esp_q_label.setStyleSheet(label_style)
 
     def set_connect(self):
         self.tp_default_btn.clicked.connect(self.set_default)
