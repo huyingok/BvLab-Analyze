@@ -628,6 +628,9 @@ class Ui_VesselMultifunctionWidget(object):
         self.label_4.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
         self.label_4.setObjectName("label_4")
         self.gridLayout_5.addWidget(self.label_4, 0, 0, 1, 1)
+        self.Param_Button = QtWidgets.QPushButton(self.train_func_groupBox)
+        self.Param_Button.setObjectName("Param_Button")
+        self.gridLayout_5.addWidget(self.Param_Button, 0, 3, 1, 1)
         self.verticalLayout_6.addLayout(self.gridLayout_5)
         spacerItem9 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.verticalLayout_6.addItem(spacerItem9)
@@ -1550,7 +1553,7 @@ class Ui_VesselMultifunctionWidget(object):
         self.verticalLayout_2.addLayout(self.verticalLayout)
 
         self.retranslateUi(VesselMultifunctionWidget)
-        self.stackedWidget.setCurrentIndex(1)
+        self.stackedWidget.setCurrentIndex(2)
         self.predict_stackedWidget.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(VesselMultifunctionWidget)
 
@@ -1638,6 +1641,7 @@ class Ui_VesselMultifunctionWidget(object):
         self.train_cfg_Button.setText(_translate("VesselMultifunctionWidget", "Open"))
         self.train_save_Button.setText(_translate("VesselMultifunctionWidget", "Open"))
         self.label_4.setText(_translate("VesselMultifunctionWidget", "Training Epochs:"))
+        self.Param_Button.setText(_translate("VesselMultifunctionWidget", "Other Parameters"))
         self.train_start_Button.setText(_translate("VesselMultifunctionWidget", "Start Training"))
         self.train_end_Button.setText(_translate("VesselMultifunctionWidget", "End Training"))
         self.train_preview_Button.setText(_translate("VesselMultifunctionWidget", "Training Visualization"))

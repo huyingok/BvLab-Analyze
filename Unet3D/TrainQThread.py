@@ -85,8 +85,9 @@ class NeuralDataTrainQThread(QThread):
         self.trainLoader = None
         self.valLoader = None
 
-        self.valBatchSize = None
+        self.valBatchSize = 2
         self.valCount = 150  # 多少次验证一次
+        self.early_stop_patience = 100
         self.model = None  # Model
         self.loss_criterion = None
         self.optimizer = None
@@ -576,7 +577,6 @@ class NeuralDataTrainQThread(QThread):
                     self.show_preview.emit(True)
 
                 # 早停机制：检查验证精度是否提升
-                early_stop_patience = 100
                 if curEvalVal > lastEvalVal:
                     # 精度提升，重置计数器
                     patience_counter = 0
@@ -586,8 +586,8 @@ class NeuralDataTrainQThread(QThread):
                     self.progress0.emit(f'Validation accuracy has not improved for {patience_counter} consecutive rounds')
                     
                     # 触发早停
-                    if patience_counter >= early_stop_patience:
-                        self.progress0.emit(f'Early stopping triggered! Validation accuracy has not improved for {early_stop_patience} consecutive rounds, training stops automatically')
+                    if patience_counter >= self.early_stop_patience:
+                        self.progress0.emit(f'Early stopping triggered! Validation accuracy has not improved for {self.early_stop_patience} consecutive rounds, training stops automatically')
                         self.train_stop = True
                         return None, view_count, patience_counter
 
@@ -703,6 +703,14 @@ class NeuralDataTrainQThread(QThread):
     def train_init(self):
         with open(self.make_config_path, 'r') as f:  # 读取配置文件
             self.make_config = json.loads(f.read())
+
+        # 更新训练参数
+        self.lr = self.make_config.get("learning_rate", self.lr)
+        self.weight_decay = self.make_config.get("weight_decay", self.weight_decay)
+        self.batchSize = self.make_config.get("batch_size", self.batchSize)
+        self.valBatchSize = self.make_config.get("val_batch_size", self.valBatchSize)
+        self.valCount = self.make_config.get("val_counts", self.valCount)
+        self.early_stop_patience = self.make_config.get("early_stop_patience", self.early_stop_patience)
 
         self.logAdd = self.make_config.get("log_path", "")  # 获取原来的日志文件路径
 

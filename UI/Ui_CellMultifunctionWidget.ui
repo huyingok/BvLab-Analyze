@@ -160,7 +160,7 @@ font: 9pt &quot;微软雅黑&quot;;</string>
      <item>
       <widget class="QStackedWidget" name="stackedWidget">
        <property name="currentIndex">
-        <number>3</number>
+        <number>2</number>
        </property>
        <widget class="QWidget" name="RevisingPage">
         <layout class="QVBoxLayout" name="revising_verticalLayout2">
@@ -1510,19 +1510,13 @@ QGroupBox#train_func_groupBox::title
                           <property name="verticalSpacing">
                            <number>12</number>
                           </property>
-                          <item row="0" column="1">
-                           <widget class="QSpinBox" name="epoch_spinBox">
-                            <property name="styleSheet">
-                             <string notr="true">background-color: rgb(70, 80, 100);</string>
+                          <item row="0" column="0">
+                           <widget class="QLabel" name="label_4">
+                            <property name="text">
+                             <string>Training Epochs:</string>
                             </property>
-                            <property name="minimum">
-                             <number>5</number>
-                            </property>
-                            <property name="maximum">
-                             <number>999999</number>
-                            </property>
-                            <property name="value">
-                             <number>500</number>
+                            <property name="alignment">
+                             <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
                             </property>
                            </widget>
                           </item>
@@ -1539,13 +1533,26 @@ QGroupBox#train_func_groupBox::title
                             </property>
                            </spacer>
                           </item>
-                          <item row="0" column="0">
-                           <widget class="QLabel" name="label_4">
-                            <property name="text">
-                             <string>Training Epochs:</string>
+                          <item row="0" column="1">
+                           <widget class="QSpinBox" name="epoch_spinBox">
+                            <property name="styleSheet">
+                             <string notr="true">background-color: rgb(70, 80, 100);</string>
                             </property>
-                            <property name="alignment">
-                             <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                            <property name="minimum">
+                             <number>5</number>
+                            </property>
+                            <property name="maximum">
+                             <number>999999</number>
+                            </property>
+                            <property name="value">
+                             <number>500</number>
+                            </property>
+                           </widget>
+                          </item>
+                          <item row="0" column="3">
+                           <widget class="QPushButton" name="Param_Button">
+                            <property name="text">
+                             <string>Other Parameters</string>
                             </property>
                            </widget>
                           </item>

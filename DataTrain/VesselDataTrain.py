@@ -18,6 +18,7 @@ from SwcToMask.VesselSwcToMask import VesselSwcToMaskQThread
 from config import exe_cfg
 from control_style.ControlStyle import (button_alpha_style, button_style, lineedit_alpha_style, lineedit_style,
                                         messagebox_style)
+from DataTrain.TrainParamWidget import TrainParamWidget
 
 
 """Vessel"""
@@ -46,6 +47,7 @@ class VesselDataTrain(object):
         self.train_save_lineEdit = self.win.train_save_lineEdit
         self.train_save_Button = self.win.train_save_Button
         self.epoch_spinBox = self.win.epoch_spinBox
+        self.Param_Button = self.win.Param_Button
 
         self.train_start_Button = self.win.train_start_Button
         self.train_end_Button = self.win.train_end_Button
@@ -59,6 +61,7 @@ class VesselDataTrain(object):
         self.train_preview_Button.clicked.connect(self.show_TrainResultPreview)
         self.train_cfg_Button.clicked.connect(self.select_path)
         self.train_save_Button.clicked.connect(lambda: self.select_dir(self.train_save_lineEdit, look=1, save=1))
+        self.Param_Button.clicked.connect(self.show_TrainParamWidget)
 
         # Thread
         # Train
@@ -78,6 +81,9 @@ class VesselDataTrain(object):
         self.VesselSwcToMaskQThread.progress0.connect(self.swc_to_mask_progress)
         self.VesselSwcToMaskQThread.progress1.connect(self.swc_to_mask_progress1)
         self.VesselSwcToMaskQThread.error0.connect(self.swc_to_mask_error)
+
+        # 训练参数界面
+        self.TrainParamWidget = TrainParamWidget()
 
     def train_preview(self, img_i, mask_i, net_seg_i):
         # self.TrainResultPreview.start_preview(img_i, mask_i, net_seg_i)
@@ -237,6 +243,31 @@ class VesselDataTrain(object):
 
                 # self.TrainResultPreview.update_pg(loss_indices, loss_list, eval_indices, eval_list, cut_line)
 
+    def show_TrainParamWidget(self):
+        self.TrainParamWidget.show()
+
+    def makerInfo_set_train_param(self):
+        makerInfo_path = self.train_cfg_lineEdit.text()
+        if makerInfo_path:
+            if os.path.exists(makerInfo_path):
+                with open(makerInfo_path, 'r') as f:
+                    makerInfo = json.loads(f.read())
+                for key, value in self.TrainParamWidget.train_param.items():
+                    if makerInfo.get(key, None) is not None:
+                        self.TrainParamWidget.train_param[key] = makerInfo.get(key)
+                self.TrainParamWidget.update_train_param()
+
+    def makerInfo_add_train_param(self, makerInfo_path, makerInfo):
+        makerInfo['learning_rate'] = self.TrainParamWidget.tp_lr_dsBox.value()
+        makerInfo['weight_decay'] = self.TrainParamWidget.tp_wd_dsBox.value()
+        makerInfo['batch_size'] = self.TrainParamWidget.tp_bs_sBox.value()
+        makerInfo['val_batch_size'] = self.TrainParamWidget.tp_vbs_sBox.value()
+        makerInfo['val_counts'] = self.TrainParamWidget.tp_vs_sBox.value()
+        makerInfo['early_stop_patience'] = self.TrainParamWidget.tp_esp_sBox.value()
+
+        with open(makerInfo_path, 'w') as f:  # update config file
+            f.write(json.dumps(makerInfo, indent=4))
+
     def data_train_start(self):
         is_keep_on = False
         try:
@@ -257,6 +288,8 @@ class VesselDataTrain(object):
                     if os.path.exists(makerInfo_path):
                         with open(makerInfo_path, 'r') as f:
                             makerInfo = json.loads(f.read())
+
+                        self.makerInfo_add_train_param(makerInfo_path, makerInfo)
 
                         os.makedirs(save_dir, exist_ok=True)
 
@@ -341,6 +374,8 @@ class VesselDataTrain(object):
         self.train_save_lineEdit.setStyleSheet(lineedit_alpha_style)
         # self.train_save_Button.setStyleSheet(button_alpha_style)
         self.epoch_spinBox.setEnabled(False)
+        self.Param_Button.setEnabled(False)
+        self.Param_Button.setStyleSheet(button_alpha_style)
         # Hide
         self.train_preview_Button.setEnabled(False)
         self.train_preview_Button.setStyleSheet(button_alpha_style)
@@ -362,6 +397,8 @@ class VesselDataTrain(object):
         self.train_save_lineEdit.setStyleSheet(lineedit_style)
         # self.train_save_Button.setStyleSheet(button_style)
         self.epoch_spinBox.setEnabled(True)
+        self.Param_Button.setEnabled(True)
+        self.Param_Button.setStyleSheet(button_style)
         # Hide
         # self.train_preview_Button.setEnabled(True)
         # self.train_preview_Button.setStyleSheet(button_style)
@@ -542,6 +579,7 @@ class VesselDataTrain(object):
                 if not self.contains_chinese(filename):
                     settings.setValue("VesselTrainConfigPath", str(Path(filename).parent))
                     self.train_cfg_lineEdit.setText(filename)
+                    self.makerInfo_set_train_param()
                 else:
                     self.mess(f"Path contains Chinese characters or spaces", "Prompt", 1)
         except Exception as e:

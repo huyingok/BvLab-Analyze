@@ -69,6 +69,7 @@ class CellDataTrainQThread(QThread):
         self.valBatchSize = 2
         self.epochs = 500
         self.valCount = 150
+        self.early_stop_patience = 100
         self.new_text = ""
 
         self.text_eval_path = ""
@@ -505,7 +506,6 @@ class CellDataTrainQThread(QThread):
                     self.show_preview.emit(True)
 
                 # Early stopping: check validation improvement
-                early_stop_patience = 100
                 if curEvalVal > lastEvalVal:
                     # Improved: reset patience counter
                     patience_counter = 0
@@ -516,9 +516,9 @@ class CellDataTrainQThread(QThread):
                         self.progress0.emit(f'Validation accuracy not improved for {patience_counter} consecutive rounds')
                     
                     # Early stopping trigger
-                    if patience_counter >= early_stop_patience:
+                    if patience_counter >= self.early_stop_patience:
                         if self.curRankId == 0:
-                            self.progress0.emit(f'Early stopping! Validation accuracy not improved for {early_stop_patience} consecutive rounds')
+                            self.progress0.emit(f'Early stopping! Validation accuracy not improved for {self.early_stop_patience} consecutive rounds')
                         self.train_stop = True
                         return None, view_count, patience_counter
 
@@ -648,6 +648,14 @@ class CellDataTrainQThread(QThread):
     def train_init(self):
         with open(self.make_config_path, 'r') as f:  # read config file
             self.make_config = json.loads(f.read())
+
+        # 更新训练参数
+        self.lr = self.make_config.get("learning_rate", self.lr)
+        self.weight_decay = self.make_config.get("weight_decay", self.weight_decay)
+        self.batchSize = self.make_config.get("batch_size", self.batchSize)
+        self.valBatchSize = self.make_config.get("val_batch_size", self.valBatchSize)
+        self.valCount = self.make_config.get("val_counts", self.valCount)
+        self.early_stop_patience = self.make_config.get("early_stop_patience", self.early_stop_patience)
 
         self.logAdd = self.make_config.get("log_path", "")  # get original log file path
 
